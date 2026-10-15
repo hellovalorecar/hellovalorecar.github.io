@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ecar Amador | Property Management VA & Apps Script Developer</title>
+<style>
+:root{--bg:#fbfaf7;--card:#fff;--ink:#1d2a2f;--mute:#5c6b70;--brand:#0f6b5c;--cta:#e8590c;--line:#e4e1d8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11191c;--card:#192327;--ink:#eef2f1;--mute:#9db0b3;--brand:#4fc3ad;--cta:#ff8a4c;--line:#2a373b}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.15;margin:0 0 16px}
+h2{font-size:1.7rem;margin:0 0 24px}
+p{margin:0 0 12px}.mute{color:var(--mute)}
+.tag{display:inline-block;color:var(--brand);font-weight:600;font-size:.9rem;margin-bottom:12px}
+.btn{display:inline-block;background:var(--cta);color:#fff;padding:14px 26px;border-radius:10px;text-decoration:none;font-weight:600}
+.btn.alt{background:transparent;color:var(--brand);border:2px solid var(--brand);margin-left:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{margin:0 0 8px;color:var(--brand)}
+ul{padding-left:20px;margin:8px 0 0}li{margin-bottom:6px}
+.steps{counter-reset:s}.steps .card{position:relative;padding-top:48px}
+.steps .card:before{counter-increment:s;content:counter(s);position:absolute;top:14px;left:22px;background:var(--brand);color:var(--bg);width:26px;height:26px;border-radius:50%;text-align:center;font-weight:700;font-size:.9rem}
+form{display:grid;gap:12px;max-width:520px}
+input,textarea,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit}
+button.btn{border:0;cursor:pointer;font:inherit;font-weight:600}
+footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;font-size:.9rem}
+</style>
+</head>
+<body>
+<header><div class="w" style="padding-top:20px;display:flex;justify-content:space-between;align-items:center"><strong>Ecar Amador</strong><a href="#contact" style="color:var(--brand);font-weight:600;text-decoration:none">Contact</a></div></header>
+
+<section><div class="w">
+<span class="tag">VA for Property Management · Google Apps Script Developer</span>
+<h1>Less admin. Fewer arrears. Smoother property operations.</h1>
+<p class="mute" style="max-width:620px">I help property management companies in the UK, Australia and the Philippines handle day-to-day operations, and I build custom web apps that automate the work your team repeats every week.</p>
+<p style="margin-top:24px"><a class="btn" href="#contact">Book a Free Discovery Call</a><a class="btn alt" href="#services">See Services</a></p>
+</div></section>
+
+<section id="services" style="background:var(--card)"><div class="w">
+<h2>What I can do for you</h2>
+<div class="grid">
+<div class="card"><h3>Property Management VA</h3>
+<ul><li>Arrears tracking and follow-ups</li><li>Resident communications</li><li>Contractor coordination</li><li>Compliance certificate tracking</li><li>Service charge administration</li></ul></div>
+<div class="card"><h3>Custom Web Apps</h3>
+<p class="mute">Built with Google Apps Script and Google Sheets, so no new software subscriptions.</p>
+<ul><li>Task and action trackers</li><li>Compliance and fire safety dashboards</li><li>Onboarding portals</li><li>Automated email reminders</li></ul></div>
+<div class="card"><h3>Workflow Automation</h3>
+<p class="mute">I turn spreadsheets and repeated tasks into simple systems your team actually uses.</p>
+<ul><li>Auto-reminders and alerts</li><li>Cleaner data and reports</li><li>Shared team access</li></ul></div>
+</div>
+</div></section>
+
+<section><div class="w">
+<h2>Why work with me</h2>
+<div class="grid">
+<div class="card"><h3>Hands-on experience</h3><p class="mute">I currently support a UK property management company across multiple residential buildings.</p></div>
+<div class="card"><h3>Works on your time zone</h3><p class="mute">Based in the Philippines, available during UK and Australian business hours.</p></div>
+<div class="card"><h3>VA and builder in one</h3><p class="mute">One person who understands the work and can build the tool that fixes it.</p></div>
+</div>
+</div></section>
+
+<section style="background:var(--card)"><div class="w">
+<h2>How it works</h2>
+<div class="grid steps">
+<div class="card"><h3>Free discovery call</h3><p class="mute">Tell me what slows your team down.</p></div>
+<div class="card"><h3>Proposal</h3><p class="mute">A clear scope, timeline and price.</p></div>
+<div class="card"><h3>Start and deliver</h3><p class="mute">Regular updates until it is done and working.</p></div>
+</div>
+</div></section>
+
+<section id="contact"><div class="w">
+<h2>Let's talk</h2>
+<p class="mute">Send a short message and I will reply within 24 hours.</p>
+<form id="f">
+<input id="n" placeholder="Your name" required>
+<input id="e" type="email" placeholder="Your email" required>
+<select id="s"><option>Property Management VA</option><option>Custom Web App</option><option>Both</option></select>
+<textarea id="m" rows="4" placeholder="What do you need help with?"></textarea>
+<button class="btn" type="submit">Send Message</button>
+</form>
+<p id="r" class="mute" style="margin-top:16px"></p>
+</div></section>
+
+<footer><div class="w">© 2026 Ecar Amador · Property Management VA · <a href="https://mail.google.com/mail/?view=cm&to=hellovalorecar@gmail.com" target="_blank" rel="noopener" style="color:var(--brand)">hellovalorecar@gmail.com</a></div></footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var g=function(i){return document.getElementById(i).value};
+  var body='Name: '+g('n')+'\nEmail: '+g('e')+'\nService: '+g('s')+'\n\n'+g('m');
+  var sub=encodeURIComponent('Inquiry from '+g('n')),bd=encodeURIComponent(body);
+  var gm='https://mail.google.com/mail/?view=cm&to=hellovalorecar@gmail.com&su='+sub+'&body='+bd;
+  var ml='mailto:hellovalorecar@gmail.com?subject='+sub+'&body='+bd;
+  document.getElementById('r').innerHTML='Thanks! Tap to send: <a href="'+gm+'" target="_blank" rel="noopener" style="color:var(--brand);font-weight:600">Open in Gmail</a>. You can also email hellovalorecar@gmail.com directly.';
+});
+</script>
+</body>
+</html>
