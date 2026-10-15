@@ -4,97 +4,134 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ecar Amador | Property Management VA & Apps Script Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fbfaf7;--card:#fff;--ink:#1d2a2f;--mute:#5c6b70;--brand:#0f6b5c;--cta:#e8590c;--line:#e4e1d8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11191c;--card:#192327;--ink:#eef2f1;--mute:#9db0b3;--brand:#4fc3ad;--cta:#ff8a4c;--line:#2a373b}}
+:root{color-scheme:light;--bg:#fff8fb;--ink:#4a3f55;--mute:#7d7089;--pink:#ffd9e8;--lav:#e6dcff;--mint:#d6f2e5;--peach:#ffe6d2;--sky:#dcedff;--brand:#8f6bd6;--cta:#9b6fe0;--line:#f0e3ee;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
-.w{max-width:960px;margin:0 auto;padding:0 20px}
-section{padding:56px 0}
-h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.15;margin:0 0 16px}
-h2{font-size:1.7rem;margin:0 0 24px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Poppins',system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+.w{max-width:980px;margin:0 auto;padding:0 20px}
+section{padding:60px 0}
+h1{font-size:clamp(1.9rem,5.5vw,3rem);line-height:1.2;margin:0 0 16px}
+h2{font-size:1.7rem;margin:0 0 8px;text-align:center}
+.sub{text-align:center;color:var(--mute);margin:0 0 32px}
 p{margin:0 0 12px}.mute{color:var(--mute)}
-.tag{display:inline-block;color:var(--brand);font-weight:600;font-size:.9rem;margin-bottom:12px}
-.btn{display:inline-block;background:var(--cta);color:#fff;padding:14px 26px;border-radius:10px;text-decoration:none;font-weight:600}
-.btn.alt{background:transparent;color:var(--brand);border:2px solid var(--brand);margin-left:8px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-.card h3{margin:0 0 8px;color:var(--brand)}
+.tag{display:inline-block;background:var(--lav);color:var(--brand);font-weight:600;font-size:.85rem;padding:6px 14px;border-radius:99px;margin-bottom:16px}
+.btn{display:inline-block;background:var(--cta);color:#fff;padding:14px 28px;border-radius:99px;text-decoration:none;font-weight:600;box-shadow:0 8px 20px rgba(155,111,224,.3)}
+.btn.alt{background:#fff;color:var(--brand);box-shadow:none;border:2px solid var(--lav);margin-left:8px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.btn.alt{margin:10px 0 0}}
+.hero svg{width:100%;height:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{border-radius:22px;padding:26px}
+.card h3{margin:12px 0 8px}
+.ic{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+.c1{background:var(--pink)}.c2{background:var(--lav)}.c3{background:var(--mint)}.c4{background:var(--peach)}.c5{background:var(--sky)}
 ul{padding-left:20px;margin:8px 0 0}li{margin-bottom:6px}
-.steps{counter-reset:s}.steps .card{position:relative;padding-top:48px}
-.steps .card:before{counter-increment:s;content:counter(s);position:absolute;top:14px;left:22px;background:var(--brand);color:var(--bg);width:26px;height:26px;border-radius:50%;text-align:center;font-weight:700;font-size:.9rem}
-form{display:grid;gap:12px;max-width:520px}
-input,textarea,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit}
+.band{background:linear-gradient(180deg,var(--lav),var(--pink))}
+.about{display:flex;gap:24px;align-items:center;background:#fff;border-radius:26px;padding:28px;box-shadow:0 10px 30px rgba(143,107,214,.12);flex-wrap:wrap}
+.av{width:110px;height:110px;border-radius:50%;background:var(--peach);display:flex;align-items:center;justify-content:center;font-size:2.6rem;font-weight:700;color:var(--brand);flex:none}
+.num{width:34px;height:34px;border-radius:50%;background:#fff;color:var(--brand);font-weight:700;display:flex;align-items:center;justify-content:center}
+form{display:grid;gap:12px;max-width:520px;margin:0 auto}
+input,textarea,select{width:100%;padding:14px;border:2px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);font:inherit}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--lav)}
 button.btn{border:0;cursor:pointer;font:inherit;font-weight:600}
-footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;font-size:.9rem}
+.hp{position:absolute;left:-9999px}
+#r{text-align:center;margin-top:16px}
+footer{padding:28px 0;text-align:center;font-size:.9rem;color:var(--mute)}
+a.l{color:var(--brand);font-weight:600}
 </style>
 </head>
 <body>
-<header><div class="w" style="padding-top:20px;display:flex;justify-content:space-between;align-items:center"><strong>Ecar Amador</strong><a href="#contact" style="color:var(--brand);font-weight:600;text-decoration:none">Contact</a></div></header>
+<header><div class="w" style="padding-top:20px;display:flex;justify-content:space-between;align-items:center"><strong>Ecar Amador ✨</strong><a class="l" href="#contact" style="text-decoration:none">Contact</a></div></header>
 
-<section><div class="w">
-<span class="tag">VA for Property Management · Google Apps Script Developer</span>
+<section><div class="w hero">
+<div>
+<span class="tag">Property Management VA · Apps Script Developer</span>
 <h1>Less admin. Fewer arrears. Smoother property operations.</h1>
-<p class="mute" style="max-width:620px">I help property management companies in the UK, Australia and the Philippines handle day-to-day operations, and I build custom web apps that automate the work your team repeats every week.</p>
+<p class="mute">I help property management companies in the UK, Australia and the Philippines handle day-to-day operations, and I build custom web apps that automate the work your team repeats every week.</p>
 <p style="margin-top:24px"><a class="btn" href="#contact">Book a Free Discovery Call</a><a class="btn alt" href="#services">See Services</a></p>
+</div>
+<svg viewBox="0 0 400 340" role="img" aria-label="Illustration of a laptop dashboard and a house">
+<circle cx="200" cy="170" r="150" fill="#e6dcff"/>
+<circle cx="330" cy="60" r="30" fill="#ffd9e8"/><circle cx="60" cy="280" r="24" fill="#d6f2e5"/><circle cx="355" cy="270" r="14" fill="#ffe6d2"/>
+<rect x="95" y="105" width="210" height="140" rx="14" fill="#fff"/>
+<rect x="95" y="105" width="210" height="26" rx="14" fill="#ffd9e8"/>
+<circle cx="113" cy="118" r="4" fill="#fff"/><circle cx="127" cy="118" r="4" fill="#fff"/><circle cx="141" cy="118" r="4" fill="#fff"/>
+<rect x="113" y="145" width="60" height="12" rx="6" fill="#d6f2e5"/><rect x="113" y="165" width="90" height="12" rx="6" fill="#dcedff"/><rect x="113" y="185" width="70" height="12" rx="6" fill="#ffe6d2"/>
+<rect x="225" y="190" width="14" height="40" rx="4" fill="#c9b3f5"/><rect x="247" y="168" width="14" height="62" rx="4" fill="#ffb8d4"/><rect x="269" y="148" width="14" height="82" rx="4" fill="#9fdcc0"/>
+<rect x="70" y="245" width="260" height="14" rx="7" fill="#fff"/>
+<path d="M290 70 L335 35 L380 70 V120 H290 Z" fill="#ffe6d2"/><path d="M282 72 L335 28 L388 72" stroke="#ffb8d4" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="326" y="92" width="18" height="28" rx="4" fill="#fff"/><rect x="302" y="82" width="14" height="14" rx="3" fill="#fff"/>
+<path d="M60 90 l6 12 13 2 -10 9 3 13 -12 -7 -12 7 3 -13 -10 -9 13 -2z" fill="#ffd9e8"/>
+</svg>
 </div></section>
 
-<section id="services" style="background:var(--card)"><div class="w">
-<h2>What I can do for you</h2>
+<section id="services"><div class="w">
+<h2>What I can do for you</h2><p class="sub">Practical help so your team can focus on residents and properties</p>
 <div class="grid">
-<div class="card"><h3>Property Management VA</h3>
+<div class="card c1"><div class="ic">🏠</div><h3>Property Management VA</h3>
 <ul><li>Arrears tracking and follow-ups</li><li>Resident communications</li><li>Contractor coordination</li><li>Compliance certificate tracking</li><li>Service charge administration</li></ul></div>
-<div class="card"><h3>Custom Web Apps</h3>
+<div class="card c2"><div class="ic">💻</div><h3>Custom Web Apps</h3>
 <p class="mute">Built with Google Apps Script and Google Sheets, so no new software subscriptions.</p>
-<ul><li>Task and action trackers</li><li>Compliance and fire safety dashboards</li><li>Onboarding portals</li><li>Automated email reminders</li></ul></div>
-<div class="card"><h3>Workflow Automation</h3>
+<ul><li>Task and action trackers</li><li>Compliance and fire safety dashboards</li><li>Onboarding portals</li></ul></div>
+<div class="card c3"><div class="ic">⚙️</div><h3>Workflow Automation</h3>
 <p class="mute">I turn spreadsheets and repeated tasks into simple systems your team actually uses.</p>
 <ul><li>Auto-reminders and alerts</li><li>Cleaner data and reports</li><li>Shared team access</li></ul></div>
 </div>
 </div></section>
 
-<section><div class="w">
-<h2>Why work with me</h2>
+<section class="band"><div class="w">
+<h2>Why work with me</h2><p class="sub">One person who understands the work and can build the tool that fixes it</p>
 <div class="grid">
-<div class="card"><h3>Hands-on experience</h3><p class="mute">I currently support a UK property management company across multiple residential buildings.</p></div>
-<div class="card"><h3>Works on your time zone</h3><p class="mute">Based in the Philippines, available during UK and Australian business hours.</p></div>
-<div class="card"><h3>VA and builder in one</h3><p class="mute">One person who understands the work and can build the tool that fixes it.</p></div>
+<div class="card" style="background:#fff"><div class="ic c4">🤝</div><h3>Hands-on experience</h3><p class="mute">I currently support a UK property management company across multiple residential buildings.</p></div>
+<div class="card" style="background:#fff"><div class="ic c5">🕐</div><h3>Works on your time zone</h3><p class="mute">Based in the Philippines, available during UK and Australian business hours.</p></div>
+<div class="card" style="background:#fff"><div class="ic c3">✨</div><h3>VA and builder in one</h3><p class="mute">No need to hire two people. I handle the admin and build the system behind it.</p></div>
 </div>
 </div></section>
 
-<section style="background:var(--card)"><div class="w">
-<h2>How it works</h2>
-<div class="grid steps">
-<div class="card"><h3>Free discovery call</h3><p class="mute">Tell me what slows your team down.</p></div>
-<div class="card"><h3>Proposal</h3><p class="mute">A clear scope, timeline and price.</p></div>
-<div class="card"><h3>Start and deliver</h3><p class="mute">Regular updates until it is done and working.</p></div>
+<section><div class="w">
+<div class="about"><div class="av">E</div>
+<div style="flex:1;min-width:240px"><h2 style="text-align:left">Hi, I'm Ecar 👋</h2>
+<p class="mute">I'm a virtual assistant based in the Philippines, working on UK time. I handle property operations every day, and I build Google Apps Script tools that make that work faster and easier.</p></div></div>
+</div></section>
+
+<section style="background:var(--sky)"><div class="w">
+<h2>How it works</h2><p class="sub">Simple, clear and no surprises</p>
+<div class="grid">
+<div class="card" style="background:#fff"><div class="num">1</div><h3>Free discovery call</h3><p class="mute">Tell me what slows your team down.</p></div>
+<div class="card" style="background:#fff"><div class="num">2</div><h3>Proposal</h3><p class="mute">A clear scope, timeline and price.</p></div>
+<div class="card" style="background:#fff"><div class="num">3</div><h3>Start and deliver</h3><p class="mute">Regular updates until it is done and working.</p></div>
 </div>
 </div></section>
 
 <section id="contact"><div class="w">
-<h2>Let's talk</h2>
-<p class="mute">Send a short message and I will reply within 24 hours.</p>
+<h2>Let's talk 💌</h2><p class="sub">Send a short message and I will reply within 24 hours.</p>
 <form id="f">
-<input id="n" placeholder="Your name" required>
-<input id="e" type="email" placeholder="Your email" required>
-<select id="s"><option>Property Management VA</option><option>Custom Web App</option><option>Both</option></select>
-<textarea id="m" rows="4" placeholder="What do you need help with?"></textarea>
-<button class="btn" type="submit">Send Message</button>
+<input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<input id="n" name="name" placeholder="Your name" required>
+<input id="e" name="email" type="email" placeholder="Your email" required>
+<select id="s" name="service"><option>Property Management VA</option><option>Custom Web App</option><option>Both</option></select>
+<textarea id="m" name="message" rows="4" placeholder="What do you need help with?"></textarea>
+<button class="btn" id="b" type="submit">Send Message</button>
 </form>
-<p id="r" class="mute" style="margin-top:16px"></p>
+<p id="r" class="mute"></p>
 </div></section>
 
-<footer><div class="w">© 2026 Ecar Amador · Property Management VA · <a href="https://mail.google.com/mail/?view=cm&to=hellovalorecar@gmail.com" target="_blank" rel="noopener" style="color:var(--brand)">hellovalorecar@gmail.com</a></div></footer>
+<footer><div class="w">© 2026 Ecar Amador · Property Management VA · <a class="l" href="https://mail.google.com/mail/?view=cm&to=hellovalorecar@gmail.com" target="_blank" rel="noopener">hellovalorecar@gmail.com</a></div></footer>
 
 <script>
+var SCRIPT_URL='https://script.google.com/macros/s/AKfycbzIrUxSg75KSI9Wcs0V5RJyH8hab9TUo9GvCMfZMaLLrjCrhIA4g7-yuWlQ7qsfxEbR5Q/exec';
 document.getElementById('f').addEventListener('submit',function(ev){
   ev.preventDefault();
-  var g=function(i){return document.getElementById(i).value};
-  var body='Name: '+g('n')+'\nEmail: '+g('e')+'\nService: '+g('s')+'\n\n'+g('m');
-  var sub=encodeURIComponent('Inquiry from '+g('n')),bd=encodeURIComponent(body);
-  var gm='https://mail.google.com/mail/?view=cm&to=hellovalorecar@gmail.com&su='+sub+'&body='+bd;
-  var ml='mailto:hellovalorecar@gmail.com?subject='+sub+'&body='+bd;
-  document.getElementById('r').innerHTML='Thanks! Tap to send: <a href="'+gm+'" target="_blank" rel="noopener" style="color:var(--brand);font-weight:600">Open in Gmail</a>. You can also email hellovalorecar@gmail.com directly.';
+  var f=ev.target,r=document.getElementById('r'),b=document.getElementById('b');
+  var d=new URLSearchParams(new FormData(f));
+  var gm='https://mail.google.com/mail/?view=cm&to=hellovalorecar@gmail.com&su='+encodeURIComponent('Inquiry from '+f.name.value)+'&body='+encodeURIComponent(f.message.value);
+  var fallback='Sorry, the message could not be sent. <a class="l" href="'+gm+'" target="_blank" rel="noopener">Send via Gmail instead</a> or email hellovalorecar@gmail.com.';
+  if(SCRIPT_URL.indexOf('http')!==0){r.innerHTML=fallback;return;}
+  b.disabled=true;b.textContent='Sending...';
+  fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:d}).then(function(){
+    r.textContent='Thank you! Your message was sent. I will reply within 24 hours. 💜';f.reset();
+  }).catch(function(){r.innerHTML=fallback;}).then(function(){b.disabled=false;b.textContent='Send Message';});
 });
 </script>
 </body>
